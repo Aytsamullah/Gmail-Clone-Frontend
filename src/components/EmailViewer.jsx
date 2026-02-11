@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { emailService } from '../services/api';
+import { emailService, API_URL } from '../services/api';
 
 function EmailViewer({ email, onClose, onRefresh, currentView, onDelete, onRestore, onPermanentDelete }) {
     const [showReply, setShowReply] = useState(false);
@@ -49,7 +49,7 @@ function EmailViewer({ email, onClose, onRefresh, currentView, onDelete, onResto
             setDownloadingAttachment(attachment.attachmentId);
 
             const response = await fetch(
-                `http://localhost:5000/api/emails/${email.id}/attachments/${attachment.attachmentId}`,
+                `${API_URL}/api/emails/${email.id}/attachments/${attachment.attachmentId}`,
                 {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`,

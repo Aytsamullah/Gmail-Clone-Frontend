@@ -1,27 +1,5 @@
 {
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "crafthid.com" }],
-      "destination": "https://www.crafthid.com/$1",
-      "permanent": true
-    }
-  ],
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "http://20.244.38.147/api/$1" },
-    { "source": "/sitemap.xml", "destination": "http://20.244.38.147/sitemap.xml" },
-    { "source": "/share/(.*)", "destination": "http://20.244.38.147/share/$1" },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(bot|Bot|crawler|Crawler|spider|Spider|crawling|googlebot|bingbot|yandexbot|duckduckbot|slurp|facebookexternalhit|twitterbot|whatsapp|WhatsApp|LinkedInBot|Slackbot|Applebot|Pinterestbot|TelegramBot|Discordbot|PetalBot).*"
-        }
-      ],
-      "destination": "http://20.244.38.147/bot-render/$1"
-    },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
